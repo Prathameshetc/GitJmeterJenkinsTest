@@ -1,0 +1,39 @@
+pipeline{
+    agent any
+        stages{
+            stage("Git Build"){
+                steps{
+                    echo "It is building"
+                    cd C:\JMeter\apache-jmeter-5.3\bin
+                    jmeter.bat -n -t C:\JMeter\apache-jmeter-5.3\bin\jmeterjenkins.jmx -l /Desktop/TestResultnew.jtl
+                }
+            }
+			 stage("Test"){
+                steps{
+                    echo "It is testing"
+                }
+            }
+			 stage("Deploy"){
+                steps{
+                    echo "It is deployment status"
+                }
+            }
+			
+            }
+            
+        }   
+}
+
+
+
+
+
+
+node {
+    stage("Build"){
+        echo "Building"
+    }
+    stage("Test"){
+        echo "Testing"
+    }
+}
