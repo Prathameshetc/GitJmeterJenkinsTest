@@ -5,7 +5,7 @@ pipeline{
                 steps{
                     echo "It is building" 
 		    bat 'cd C:/JMeter/apache-jmeter-5.3/bin'
-                    bat 'jmeter.bat -n -t C:/JMeter/apache-jmeter-5.3/bin/jmeterjenkins.jmx -l /Desktop/TestResultnew.jtl'
+                    bat 'C:/JMeter/apache-jmeter-5.3/bin/jmeter.bat -n -t C:/JMeter/apache-jmeter-5.3/bin/jmeterjenkins.jmx -l /Desktop/TestResultnew.jtl'
                 }
             }
 			 stage("Test"){
